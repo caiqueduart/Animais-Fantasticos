@@ -14,6 +14,7 @@ dl {
 img {
     display: block;
     max-width: 100%;
+    cursor: pointer;
 }
 
 ul {
@@ -52,6 +53,10 @@ body {
     text-transform: uppercase;
     font-size: 0.875rem;
     letter-spacing: .1em;
+}
+
+.menu li a:hover {
+    background-color: rgba(238, 85, 68, 0.5);
 }
 
 .grid-section {
@@ -99,8 +104,9 @@ body {
 }
 
 .animais-lista {
-    height: 800px;
+    height: 420px;
     overflow-y: scroll;
+    overflow-x: hidden;
     grid-column: 2;
 }
 
@@ -124,6 +130,7 @@ body {
 
 .animais-descricao section {
     margin-bottom: 3rem;
+    display: none;
 }
 
 .faq-lista {
@@ -136,6 +143,7 @@ body {
     margin-top: 2rem;
     margin-bottom: .5rem;
     color: #E54;
+    cursor: pointer;
 }
 
 .faq-lista dt::before {
@@ -151,6 +159,7 @@ body {
     font-family: Helvetica, Arial;
     margin-bottom: .5rem;
     margin-left: 30px;
+    display: none;
 }
 
 .mapa {
@@ -187,16 +196,69 @@ body {
     font-weight: bold;
 }
 
-.animais-lista li {
-    border: 20px solid #faf6ed;
+.animais-lista li:not(.selected) {
+    border: 10px solid #faf6ed;
+    animation: clickMe 3s infinite;
 }
 
 .selected {
-    border: none !important;
+    border: 2px solid #FB5 !important;
 }
 
-.activate {
-    background-color: rgba(238, 85, 68, 0.5);
+.showDescription {
+    display: block !important;
+    animation: showDescription 0.5s forwards;
+}
+
+.showQuestion {
+    display: block !important;
+}
+
+dd.showQuestion {
+    animation: showQuestion 0.5s forwards;
+}
+
+@keyframes showDescription {
+    from {
+        opacity: 0;
+        transform: translate3d(-20px, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes clickMe {
+    4% {
+        transform: rotatez(10deg);
+    }
+
+    8% {
+        transform: rotatez(-10deg);
+    }
+
+    12% {
+        transform: rotatez(10deg);
+    }
+
+    16% {
+        transform: rotatez(0);
+    }
+
+}
+
+@keyframes showQuestion {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -10px, 0);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
 }
 
 @media (max-width: 700px) {
