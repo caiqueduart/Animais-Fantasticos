@@ -27,14 +27,17 @@ function activateNav() {
         link.addEventListener('click', event => {
             event.preventDefault();
 
-            const section = document.querySelector(
-                event.currentTarget.getAttribute('href')
-            );
+            if(event.currentTarget.getAttribute('href')) {
+                const section = document.querySelector(
+                    event.currentTarget.getAttribute('href')
+                );
+
+                section.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                });
+            }
             
-            section.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start',
-            });
         });
     });
 }

@@ -1,0 +1,75 @@
+.login-modal {
+    background-color: rgb(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-modal label,
+.login-modal input,
+.login-modal button {
+    display: block;
+}
+
+.login-modal form {
+    background-color: #faf6ed;
+    padding: 40px 80px;
+    border: 10px solid #FB5;
+    box-shadow: 0 0 0 10px #faf6ed;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 16px;
+    position: relative;
+}
+
+.login-modal label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.login-modal input {
+    width: 200px;
+    height: 30px;
+    padding: 0 10px;
+    margin-top: 6px;
+}
+
+.login-modal button {
+    font-family: 'IBM Plex Mono', monospace;
+    background-color: #E54;
+    border-radius: 2px;
+    border: none;
+    padding: 10px 30px;
+    display: flex;
+    color: #faf6ed;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.login-modal button#fechar {
+    border: 6px solid #ffffff;
+    justify-content: center;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    position: absolute;
+    top: -35px;
+    right: -35px;
+    font-size: 2em;
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0, 0.1);
+}
+
+.login-modal[data-exibir="true"] {
+    display: flex;
+}
